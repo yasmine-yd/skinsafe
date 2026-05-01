@@ -1,0 +1,307 @@
+:root {
+    --vert: #3A7D44;
+    --vert-clair: #A8D5A2;
+    --vert-pale: #E8F5E2;
+    --jaune: #F4C430;
+    --jaune-clair: #FDF3C0;
+    --jaune-pale: #FFFDE8;
+    --texte: #1C2B1E;
+    --texte-doux: #4A6350;
+    --blanc: #FFFFFF;
+    --font-titre: 'Playfair Display', serif;
+    --font-corps: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-corps);
+    background-color: var(--jaune-pale);
+    color: var(--texte);
+    font-weight: 300;
+}
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background-color: rgba(255, 253, 232, 0.95);
+    border-bottom: 2px solid var(--jaune);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-family: var(--font-titre);
+    font-size: 26px;
+    color: var(--vert);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav { display: flex; gap: 36px; }
+
+.nav a {
+    text-decoration: none;
+    color: var(--texte-doux);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav a:hover { color: var(--vert); }
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 60px;
+    gap: 60px;
+    background: linear-gradient(135deg, var(--jaune-pale) 50%, var(--vert-pale) 100%);
+    min-height: 88vh;
+}
+
+.hero-texte { max-width: 520px; }
+
+.label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vert);
+    background-color: var(--vert-pale);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--vert-clair);
+}
+
+.label--clair {
+    background-color: rgba(255,255,255,0.3);
+    color: var(--jaune-pale);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.hero-texte h1 {
+    font-family: var(--font-titre);
+    font-size: 60px;
+    line-height: 1.15;
+    color: var(--texte);
+    margin-bottom: 20px;
+}
+
+.hero-texte p {
+    font-size: 17px;
+    color: var(--texte-doux);
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background-color: var(--vert);
+    color: var(--blanc);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--jaune);
+    color: var(--texte);
+    transform: translateY(-2px);
+}
+
+.hero-img {
+    width: 440px;
+    height: 500px;
+    border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 4px solid var(--jaune);
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PRODUITS */
+.produits {
+    padding: 100px 60px;
+    background-color: var(--blanc);
+    text-align: center;
+}
+
+.produits h2, .pourquoi h2, .contact h2 {
+    font-family: var(--font-titre);
+    font-size: 40px;
+    color: var(--texte);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.produits-grille {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+}
+
+.carte {
+    background: var(--jaune-pale);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 260px;
+    border: 1px solid var(--jaune-clair);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.carte:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(58, 125, 68, 0.15);
+}
+
+.carte-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.carte-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.carte:hover .carte-img img { transform: scale(1.05); }
+
+.carte-info { padding: 20px; }
+
+.carte-info h3 {
+    font-family: var(--font-titre);
+    font-size: 20px;
+    color: var(--vert);
+    margin-bottom: 8px;
+}
+
+.carte-info p {
+    font-size: 13px;
+    color: var(--texte-doux);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.prix {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--texte);
+    background-color: var(--jaune);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* POURQUOI */
+.pourquoi {
+    padding: 100px 60px;
+    background-color: var(--vert);
+    text-align: center;
+}
+
+.pourquoi h2 { color: var(--blanc); }
+
+.engagements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.engagement {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 36px 28px;
+    max-width: 260px;
+    transition: background-color 0.3s;
+}
+
+.engagement:hover { background-color: rgba(255,255,255,0.18); }
+
+.engagement-icone { font-size: 36px; margin-bottom: 16px; }
+
+.engagement h3 {
+    font-family: var(--font-titre);
+    font-size: 20px;
+    color: var(--jaune);
+    margin-bottom: 10px;
+}
+
+.engagement p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+/* CONTACT */
+.contact {
+    padding: 100px 60px;
+    background-color: var(--jaune-pale);
+    text-align: center;
+}
+
+.contact p {
+    font-size: 16px;
+    color: var(--texte-doux);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+.footer {
+    padding: 28px 60px;
+    background-color: var(--texte);
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .header { padding: 16px 20px; }
+    .nav { gap: 16px; }
+
+    .hero {
+        flex-direction: column;
+        padding: 50px 20px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-texte h1 { font-size: 40px; }
+    .hero-img { width: 280px; height: 300px; }
+
+    .produits, .pourquoi, .contact { padding: 60px 20px; }
+
+    .carte { width: 100%; }
+    .engagement { max-width: 100%; }
+
+    .produits h2, .pourquoi h2, .contact h2 { font-size: 30px; }
+}
